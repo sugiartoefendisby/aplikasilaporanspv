@@ -1,63 +1,74 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laporan Pekerjaan</title>
-    <link rel="stylesheet" href="report-style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="floating-header">
-      <div class="header-content">
-        <p id="spvName"></p>
-        <button id="logoutBtn" class="logout-btn">Keluar</button>
-      </div>
-    </header>
 
-    <section id="report-form-page">
-      <div class="report-header">
-        <h1>Laporan Pekerjaan</h1>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laporan Pekerjaan</title>
+  <link rel="stylesheet" href="report-style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Tambahkan di bagian <head> -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#4285f4">
+</head>
 
-      <div class="loading-indicator" id="loadingIndicator">
-        <div class="spinner"></div>
-        <p>Memuat data...</p>
-      </div>
+<body>
+  <header class="floating-header">
+    <div class="header-content">
+      <p id="spvName"></p>
+      <button id="logoutBtn" class="logout-btn">Keluar</button>
+    </div>
+  </header>
 
-      <div class="report-content" id="reportContent">
-        <form id="reportForm">
-          <div class="form-group date-input-container">
-            <label for="reportDate">Tanggal Laporan:</label>
-            <input type="date" id="reportDate" name="reportDate" required />
-          </div>
+  <section id="report-form-page">
+    <div class="report-header">
+      <h1>Laporan Pekerjaan</h1>
+    </div>
 
-          <div id="jobPackageSections">
-            <!-- Bagian laporan akan dibuat secara dinamis di sini oleh JavaScript -->
-          </div>
+    <div class="loading-indicator" id="loadingIndicator">
+      <div class="spinner"></div>
+      <p>Memuat data...</p>
+    </div>
 
-          <div id="reportMessage" class="report-message"></div>
+    <div class="report-content" id="reportContent">
+      <form id="reportForm">
+        <div class="form-group date-input-container">
+          <label for="reportDate">Tanggal Laporan:</label>
+          <input type="date" id="reportDate" name="reportDate" required />
+        </div>
 
-          <div class="floating-submit-container">
-            <button type="submit" class="submit-btn">Kirim Laporan</button>
-          </div>
-        </form>
-      </div>
+        <div id="jobPackageSections">
+          <!-- Bagian laporan akan dibuat secara dinamis di sini oleh JavaScript -->
+        </div>
 
-      <div
-        id="reportSummary"
-        class="report-summary-container"
-        style="display: none"
-      >
-        <!-- Ringkasan laporan akan ditampilkan di sini -->
-      </div>
-    </section>
+        <div id="reportMessage" class="report-message"></div>
 
-    <script src="report.js"></script>
-  </body>
+        <div class="floating-submit-container">
+          <button type="submit" class="submit-btn">Kirim Laporan</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="reportSummary" class="report-summary-container" style="display: none">
+      <!-- Ringkasan laporan akan ditampilkan di sini -->
+    </div>
+  </section>
+
+  <script src="report.js"></script>
+
+  <!-- Tambahkan sebelum </body> -->
+  <script>
+    // Daftarkan Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('Service Worker terdaftar'))
+          .catch(err => console.log('Gagal mendaftar Service Worker: ', err));
+      });
+    }
+  </script>
+</body>
+
 </html>
