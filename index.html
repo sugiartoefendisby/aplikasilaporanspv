@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laporan Pekerjaan</title>
+    <!-- Hubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="login-style.css" />
+    <!-- Menambahkan font 'Poppins' dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="login">
+      <div class="login-form">
+        <div class="circle-box">
+          <i></i>
+          <i></i>
+          <i></i>
+          <form class="form-wrapper" id="loginForm">
+            <h2>Laporan Pekerjaan <br />Tahap-2</h2>
+            <div class="field">
+              <label for="username" class="sr-only">Masukkan Nama Anda</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Masukkan Nama Anda"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="password" class="sr-only">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <div id="errorMessage" class="error-message"></div>
+            <div class="field">
+              <input type="submit" value="Masuk" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hubungkan ke file JavaScript eksternal -->
+    <script src="login.js"></script>
+  </body>
+</html>

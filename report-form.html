@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laporan Pekerjaan</title>
+    <link rel="stylesheet" href="report-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="floating-header">
+      <div class="header-content">
+        <p id="spvName"></p>
+        <button id="logoutBtn" class="logout-btn">Keluar</button>
+      </div>
+    </header>
+
+    <section id="report-form-page">
+      <div class="report-header">
+        <h1>Laporan Pekerjaan</h1>
+      </div>
+
+      <div class="loading-indicator" id="loadingIndicator">
+        <div class="spinner"></div>
+        <p>Memuat data...</p>
+      </div>
+
+      <div class="report-content" id="reportContent">
+        <form id="reportForm">
+          <div class="form-group date-input-container">
+            <label for="reportDate">Tanggal Laporan:</label>
+            <input type="date" id="reportDate" name="reportDate" required />
+          </div>
+
+          <div id="jobPackageSections">
+            <!-- Bagian laporan akan dibuat secara dinamis di sini oleh JavaScript -->
+          </div>
+
+          <div id="reportMessage" class="report-message"></div>
+
+          <div class="floating-submit-container">
+            <button type="submit" class="submit-btn">Kirim Laporan</button>
+          </div>
+        </form>
+      </div>
+
+      <div
+        id="reportSummary"
+        class="report-summary-container"
+        style="display: none"
+      >
+        <!-- Ringkasan laporan akan ditampilkan di sini -->
+      </div>
+    </section>
+
+    <script src="report.js"></script>
+  </body>
+</html>
