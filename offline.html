@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Pekerjaan - Offline</title>
+  <!-- Gunakan CSS yang sudah ada -->
+  <link rel="stylesheet" href="login-style.css">
+  <link rel="stylesheet" href="report-style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Hanya tambahan minimal untuk layout offline */
+    .offline-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .offline-icon {
+      font-size: 3rem;
+      color: aquamarine;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Reuse header style dari report-style.css -->
+  <header class="floating-header">
+    <div class="header-content">
+      <p>Mode Offline</p>
+    </div>
+  </header>
+
+  <!-- Main content menggunakan style yang ada -->
+  <section id="login" style="height: calc(100vh - 60px);">
+    <div class="login-form">
+      <div class="circle-box">
+        <i></i>
+        <i></i>
+        <i></i>
+        <div class="form-wrapper">
+          <div class="offline-icon">📶</div>
+          <h2 style="color: #ff6347;">Koneksi Terputus</h2>
+          <p style="margin: 15px 0; color: whitesmoke;">Aplikasi membutuhkan internet untuk mengakses data terbaru.</p>
+          
+          <!-- Reuse button style dari login.css -->
+          <div class="field">
+            <input 
+              type="button" 
+              value="Coba Lagi" 
+              onclick="window.location.reload()"
+              style="cursor: pointer;"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Deteksi koneksi online
+    function checkConnection() {
+      if (navigator.onLine) {
+        window.location.reload();
+      }
+    }
+    setInterval(checkConnection, 5000); // Cek setiap 5 detik
+  </script>
+</body>
+</html>
