@@ -45,14 +45,12 @@
   <!-- Hubungkan ke file JavaScript eksternal -->
   <script src="login.js"></script>
 
-  <!-- Tambahkan sebelum </body> -->
   <script>
-    // Daftarkan Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
-          .then(reg => console.log('Service Worker terdaftar'))
-          .catch(err => console.log('Gagal mendaftar Service Worker: ', err));
+          .then(reg => console.log('Service Worker aktif!'))
+          .catch(err => console.log('Gagal:', err));
       });
     }
   </script>

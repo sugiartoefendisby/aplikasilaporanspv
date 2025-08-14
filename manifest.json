@@ -1,6 +1,6 @@
 {
   "name": "Laporan Pekerjaan SPV",
-  "short_name": "Laporan SPV",
+  "short_name": "LaporanSPV",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
